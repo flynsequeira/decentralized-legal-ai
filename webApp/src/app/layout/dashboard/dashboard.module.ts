@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule, MatCardModule, MatIconModule, MatTableModule, MatSelectModule, MatInputModule } from '@angular/material';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { FormsModule }   from '@angular/forms';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
@@ -19,7 +20,8 @@ import { DashboardComponent } from './dashboard.component';
         MatButtonModule,
         MatIconModule,
         MatSelectModule,
-        MatInputModule
+        MatInputModule,
+        FormsModule
     ],
     declarations: [DashboardComponent]
 })

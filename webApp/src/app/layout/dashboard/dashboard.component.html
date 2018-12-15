@@ -1,24 +1,9 @@
 
-<div class="row">
-<h4>Cryptocurrency</h4>
-<mat-form-field>
-  <mat-select placeholder="Select Cryptocurrency"  [(value)]="cryptoSelected">
-    <mat-option *ngFor="let cryto of cyptos" [value]="cryto.value">
-      {{cryto.viewValue}}
-    </mat-option>
-  </mat-select>
+<h4> Tell us about your legal problem, and we'll show you relevant results with insights. </h4>
+<mat-form-field class="query-full-width">
+  <input matInput [(ngModel)]="userQuery" placeholder='keep your search precise'>
 </mat-form-field>
-
-<h4>Real Currency</h4>
-<mat-form-field>
-  <mat-select placeholder="Select currency" [(value)]="currencySel">
-    <mat-option *ngFor="let currency of currencies" [value]="currency.value">
-      {{currency.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-</div>
 
 <div class="example-button-row">
-  <button mat-raised-button color="primary" (click)="submitForm()">Submit</button>
+  <button mat-raised-button color="primary" (click)="submitForm()">Search</button>
 </div>

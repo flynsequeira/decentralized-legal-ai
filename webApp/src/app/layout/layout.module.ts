@@ -9,7 +9,6 @@ import {
     MatSidenavModule,
     MatToolbarModule
 } from '@angular/material';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopnavComponent } from './components/topnav/topnav.component';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
@@ -26,7 +25,7 @@ import { LayoutComponent } from './layout.component';
         MatMenuModule,
         MatListModule
     ],
-    declarations: [LayoutComponent, TopnavComponent, SidebarComponent]
+    declarations: [LayoutComponent, TopnavComponent]
 })
 
 export class LayoutModule {}

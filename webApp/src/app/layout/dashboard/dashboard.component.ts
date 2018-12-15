@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
 import { RestService } from '../../shared/services/rest.service';
 
 export interface Currency {
@@ -14,33 +13,33 @@ export interface Currency {
     styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-    cryptoSelected = '';
-    currencySel = '';
-    cyptos: Currency[] = [
-        {value: 'ETH', viewValue: 'Ethereum'},
-        {value: 'DASH', viewValue: 'Dash'},
-        {value: 'BCH', viewValue: 'Bitcoin Cash'},
-        {value: 'LTC', viewValue: 'Litecoin'}
-      ];
-
-    currencies: Currency[] = [
-        {value: 'AUD', viewValue: 'Australia Dollar'},
-        {value: 'GBP', viewValue: 'Great Britain Pound	'},
-        {value: 'EUR', viewValue: 'Euro'},
-        {value: 'JPY', viewValue: 'Japan Yen'},
-        {value: 'USD', viewValue: 'USA Dollar'}
-      ];
-
+    userQuery: String;
+    demoDataset = {
+        "sentiment": {
+            "document": {
+             "score": -0.479108,
+             "label": "negative"
+            }
+        },
+        "emotion": {
+            "document": {
+                "emotion": {
+                    "sadness": 0.494381,
+                    "joy": 0.475491,
+                    "fear": 0.088296,
+                    "disgust": 0.127116,
+                    "anger": 0.133539
+                }
+            }
+        }
+    };
     constructor(private _rest: RestService) {
     }
 
     ngOnInit() {}
 
     submitForm() {
-
-        console.log(this.cryptoSelected);
-        console.log(this.currencySel);
-        console.log('clicked');
+        console.log(this.userQuery);
     }
 
 }

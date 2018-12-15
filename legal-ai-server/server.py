@@ -6,6 +6,8 @@ import datetime
 import requests
 import json
 import time
+import searchElastic
+
 
 def connect():
     connection = MongoClient('localhost', 27017)
@@ -13,8 +15,6 @@ def connect():
     return handle
 
 app = Flask(__name__)
-app.config['ELASTICSEARCH_URL'] = 'localhost:9200/'
-es =  Elasticsearch([app.config['ELASTICSEARCH_URL']])
 handle = connect()
 
 
@@ -27,9 +27,14 @@ def hello():
 def data():
     key1 = request.get_json()
     print(key1['data'])
-
+    result = elasticObj.search('searchall', key1['data'])
+    print(result)
     return  "{status:error, data: 'test'}"
 
+
+# Elastic Connect
+elasticHost = "http://localhost:9200"
+elasticObj = searchElastic.SearchElastic(host=elasticHost)
 
 if __name__ == '__main__':
     app.run()

@@ -1,8 +1,8 @@
 
 <h4> Tell us about your legal problem, and we'll show you relevant results with insights. </h4>
 <mat-form-field class="query-full-width">
-  <input matInput [(ngModel)]="userQuery" placeholder='keep your search precise'>
-</mat-form-field>
+  <input matInput [(ngModel)]="userQuery" #incidentDescription maxlength="60" placeholder='Keep your search precise(max 60 letter). Seperate the words by space.'>
+</mat-form-field>{{60- incidentDescription.value.length}}/60
 
 <div class="example-button-row">
   <button mat-raised-button color="primary" (click)="submitForm()">Search</button>

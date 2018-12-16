@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../shared/services/rest.service';
 
-export interface Currency {
-    value: string;
-    viewValue: string;
-  }
-
-
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
@@ -40,6 +34,14 @@ export class DashboardComponent implements OnInit {
 
     submitForm() {
         console.log(this.userQuery);
+
+        this._rest.sendLegalData(this.userQuery).subscribe( resp => {
+            console.log(resp);
+        },
+        err => {
+            console.log(err);
+        });
+
     }
 
 }

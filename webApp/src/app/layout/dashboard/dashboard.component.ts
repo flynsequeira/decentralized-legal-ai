@@ -34,7 +34,6 @@ export class DashboardComponent implements OnInit {
     ngOnInit() {}
 
     submitForm() {
-        console.log(this.userQuery);
         this.dashboardService.searchQuery(this.userQuery).subscribe(searchResult => {
             console.log(searchResult);
         });

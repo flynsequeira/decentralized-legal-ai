@@ -1,6 +1,7 @@
 # pip install elasticsearch
 import elasticsearch
 from datetime import datetime
+from pymongo import MongoClient
 
 print('connecting to db')
 # client = MongoClient()

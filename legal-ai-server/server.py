@@ -41,7 +41,6 @@ def search_case():
 
 
 
-@app.route("/summarize-case", methods=['GET', 'POST'])
 def summarize_case():
         if request.method == 'POST':
                 natural_language_understanding = NaturalLanguageUnderstandingV1(version='2018-11-16',iam_apikey='fhfAp9h12U5DSbZ0AzPomZ-suKwnboNAg3EdorPHsB5e',url='https://gateway-lon.watsonplatform.net/natural-language-understanding/api')

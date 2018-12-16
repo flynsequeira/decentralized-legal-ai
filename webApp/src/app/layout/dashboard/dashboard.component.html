@@ -15,8 +15,8 @@
   <mat-card class="example-card" *ngFor="let case of caseList; let i = index">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Case {{(i) + (1) }} </mat-card-title>
-      <mat-card-subtitle>{{case.id}}</mat-card-subtitle>
+      <mat-card-title>Case {{(i) + (1) }} </mat-card-title> <br>
+        <mat-card-subtitle *ngFor="let cat of case.analytics.categories"> '{{cat.label}}' &nbsp; </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content >
 
@@ -27,28 +27,9 @@
     </mat-card-content>
     <mat-card-actions>
         <button mat-button (click)="toggleShow(i)">Show text</button>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
     </mat-card-actions>
     <br>
   </mat-card>
-
-<!-- 
-  <mat-card>
-    <mat-card-header>
-       <mat-card-title style="font-size: 20px;">My collapsible card title</mat-card-title>
-    </mat-card-header>
-  
-    <mat-card-content *ngIf="!collapsed">
-      <p>This is some example text.</p>
-       <p>This text will disappear when you use the action button in the actions bar below.</p>
-    </mat-card-content>
-
-    <mat-card-actions>
-       <button mat-button (click)="collapsed=true">Collapse text</button>
-       <button mat-button (click)="collapsed=false">Uncollapse text</button>
-    </mat-card-actions>
-  </mat-card> -->
 
 
   

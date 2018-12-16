@@ -57,6 +57,7 @@ export class DashboardComponent implements OnInit {
 
             this.dashboardService.searchQuery(this.userQuery).subscribe(searchResult => {
                 this._spinner.hide();
+                console.log(searchResult);
                 this.caseList = searchResult['summarized_search_result'];
                 console.log(this.caseList);
                 this.showTable = true;

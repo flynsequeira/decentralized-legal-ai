@@ -1,77 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["layout-layout-module"],{
 
-/***/ "./src/app/layout/components/sidebar/sidebar.component.html":
-/*!******************************************************************!*\
-  !*** ./src/app/layout/components/sidebar/sidebar.component.html ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div id=\"sidebar\">\n    <mat-nav-list>\n        <a mat-list-item [routerLinkActive]=\"'active'\" [routerLink]=\"['/dashboard']\">\n            <mat-icon class=\"sidenav-icon\">dashboard</mat-icon> Dashboard\n        </a>\n         <a mat-list-item [routerLinkActive]=\"'active'\" [routerLink]=\"['/forcast']\">\n            <mat-icon class=\"sidenav-icon\">bar_chart</mat-icon> Chart\n        </a>\n    </mat-nav-list>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/layout/components/sidebar/sidebar.component.scss":
-/*!******************************************************************!*\
-  !*** ./src/app/layout/components/sidebar/sidebar.component.scss ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "#sidebar {\n  width: 250px;\n  position: fixed;\n  top: 56px;\n  bottom: 0;\n  background: #fff;\n  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);\n  z-index: 999;\n  -ms-overflow-y: auto;\n  overflow-y: auto; }\n  #sidebar .mat-nav-list {\n    width: 100%; }\n  #sidebar .mat-nav-list a {\n      display: block; }\n  #sidebar .mat-nav-list a .mat-icon {\n        margin-right: 15px; }\n  .nested-menu .nested {\n  list-style-type: none; }\n  .nested-menu .submenu {\n  display: none;\n  height: 0; }\n  .nested-menu .expand.submenu {\n  display: block;\n  list-style-type: none;\n  height: auto;\n  margin: 0; }\n  .nested-menu .expand.submenu li a {\n    padding: 10px;\n    display: block; }\n  @media screen and (max-width: 992px) {\n  #sidebar {\n    left: -250px; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9mbHluc2VxdWVpcmEvRG9jdW1lbnRzL2xhdy1yZXNlYXJjaC9kZWNlbnRyYWxpemVkLWxlZ2FsLWFpL3dlYkFwcC9zcmMvYXBwL2xheW91dC9jb21wb25lbnRzL3NpZGViYXIvc2lkZWJhci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQVk7RUFDWixnQkFBZTtFQUNmLFVBQVM7RUFDVCxVQUFTO0VBQ1QsaUJBQWdCO0VBQ2hCLDBDQUF5QztFQUN6QyxhQUFZO0VBQ1oscUJBQW9CO0VBQ3BCLGlCQUFnQixFQVVuQjtFQW5CRDtJQVdRLFlBQVcsRUFPZDtFQWxCTDtNQWdCWSxlQUFjLEVBQ2pCO0VBakJUO1FBY2dCLG1CQUFrQixFQUNyQjtFQUtiO0VBRVEsc0JBQXFCLEVBQ3hCO0VBSEw7RUFLUSxjQUFhO0VBQ2IsVUFBUyxFQUNaO0VBUEw7RUFVWSxlQUFjO0VBQ2Qsc0JBQXFCO0VBQ3JCLGFBQVk7RUFDWixVQUFTLEVBT1o7RUFwQlQ7SUFnQm9CLGNBQWE7SUFDYixlQUFjLEVBQ2pCO0VBS2pCO0VBQ0k7SUFDSSxhQUFZLEVBQ2YsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2xheW91dC9jb21wb25lbnRzL3NpZGViYXIvc2lkZWJhci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNzaWRlYmFyIHtcbiAgICB3aWR0aDogMjUwcHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTZweDtcbiAgICBib3R0b206IDA7XG4gICAgYmFja2dyb3VuZDogI2ZmZjtcbiAgICBib3gtc2hhZG93OiAzcHggMCA2cHggcmdiYSgwLCAwLCAwLCAwLjI0KTtcbiAgICB6LWluZGV4OiA5OTk7XG4gICAgLW1zLW92ZXJmbG93LXk6IGF1dG87XG4gICAgb3ZlcmZsb3cteTogYXV0bztcbiAgICAubWF0LW5hdi1saXN0IHtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIGEge1xuICAgICAgICAgICAgLm1hdC1pY29uIHtcbiAgICAgICAgICAgICAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgfVxuICAgIH1cbn1cbi5uZXN0ZWQtbWVudSB7XG4gICAgLm5lc3RlZCB7XG4gICAgICAgIGxpc3Qtc3R5bGUtdHlwZTogbm9uZTtcbiAgICB9XG4gICAgLnN1Ym1lbnUge1xuICAgICAgICBkaXNwbGF5OiBub25lO1xuICAgICAgICBoZWlnaHQ6IDA7XG4gICAgfVxuICAgICYgLmV4cGFuZCB7XG4gICAgICAgICYuc3VibWVudSB7XG4gICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICAgIGxpc3Qtc3R5bGUtdHlwZTogbm9uZTtcbiAgICAgICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgICAgIGxpIHtcbiAgICAgICAgICAgICAgICBhIHtcbiAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogMTBweDtcbiAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogOTkycHgpIHtcbiAgICAjc2lkZWJhciB7XG4gICAgICAgIGxlZnQ6IC0yNTBweDtcbiAgICB9XG59XG4iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/layout/components/sidebar/sidebar.component.ts":
-/*!****************************************************************!*\
-  !*** ./src/app/layout/components/sidebar/sidebar.component.ts ***!
-  \****************************************************************/
-/*! exports provided: SidebarComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return SidebarComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var SidebarComponent = /** @class */ (function () {
-    function SidebarComponent() {
-    }
-    SidebarComponent.prototype.ngOnInit = function () {
-        this.showMenu = '';
-    };
-    SidebarComponent.prototype.addExpandClass = function (element) {
-        if (element === this.showMenu) {
-            this.showMenu = '0';
-        }
-        else {
-            this.showMenu = element;
-        }
-    };
-    SidebarComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-sidebar',
-            template: __webpack_require__(/*! ./sidebar.component.html */ "./src/app/layout/components/sidebar/sidebar.component.html"),
-            styles: [__webpack_require__(/*! ./sidebar.component.scss */ "./src/app/layout/components/sidebar/sidebar.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], SidebarComponent);
-    return SidebarComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/layout/components/topnav/topnav.component.html":
 /*!****************************************************************!*\
   !*** ./src/app/layout/components/topnav/topnav.component.html ***!
@@ -79,7 +7,7 @@ var SidebarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n    <div class=\"nav-brand\">\n        Cryptocurrency \n    </div>\n    <button mat-icon-button (click)=\"onLoggedout()\" style=\"padding-left:1624px!important\">\n        <mat-icon>power_settings_new</mat-icon>\n    </button>\n</mat-toolbar>\n"
+module.exports = "<mat-toolbar color=\"primary\">\n    <div class=\"nav-brand\">\n        Legal AI \n    </div>\n    <button mat-icon-button (click)=\"onLoggedout()\" style=\"padding-left:1624px!important\">\n        <mat-icon>power_settings_new</mat-icon>\n    </button>\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -119,24 +47,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var TopnavComponent = /** @class */ (function () {
     function TopnavComponent(router) {
-        var _this = this;
         this.router = router;
-        this.router.events.subscribe(function (val) {
-            if (val instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"] && window.innerWidth <= 992 && _this.isToggled()) {
-                _this.toggleSidebar();
-            }
-        });
     }
     TopnavComponent.prototype.ngOnInit = function () {
-        this.pushRightClass = 'push-right';
-    };
-    TopnavComponent.prototype.isToggled = function () {
-        var dom = document.querySelector('body');
-        return dom.classList.contains(this.pushRightClass);
-    };
-    TopnavComponent.prototype.toggleSidebar = function () {
-        var dom = document.querySelector('body');
-        dom.classList.toggle(this.pushRightClass);
     };
     TopnavComponent.prototype.onLoggedout = function () {
         localStorage.removeItem('isLoggedin');
@@ -218,7 +131,7 @@ var LayoutRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <app-nav></app-nav> -->\n<app-topnav></app-topnav>\n<app-sidebar></app-sidebar>\n<div class=\"main-container\">\n    <router-outlet></router-outlet>\n</div>"
+module.exports = "<!-- <app-nav></app-nav> -->\n<app-topnav></app-topnav>\n<div class=\"main-container\">\n    <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -286,17 +199,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _components_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/sidebar/sidebar.component */ "./src/app/layout/components/sidebar/sidebar.component.ts");
-/* harmony import */ var _components_topnav_topnav_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/topnav/topnav.component */ "./src/app/layout/components/topnav/topnav.component.ts");
-/* harmony import */ var _layout_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./layout-routing.module */ "./src/app/layout/layout-routing.module.ts");
-/* harmony import */ var _layout_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./layout.component */ "./src/app/layout/layout.component.ts");
+/* harmony import */ var _components_topnav_topnav_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/topnav/topnav.component */ "./src/app/layout/components/topnav/topnav.component.ts");
+/* harmony import */ var _layout_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layout-routing.module */ "./src/app/layout/layout-routing.module.ts");
+/* harmony import */ var _layout_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./layout.component */ "./src/app/layout/layout.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -310,7 +221,7 @@ var LayoutModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
-                _layout_routing_module__WEBPACK_IMPORTED_MODULE_5__["LayoutRoutingModule"],
+                _layout_routing_module__WEBPACK_IMPORTED_MODULE_4__["LayoutRoutingModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSidenavModule"],
@@ -319,7 +230,7 @@ var LayoutModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatMenuModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"]
             ],
-            declarations: [_layout_component__WEBPACK_IMPORTED_MODULE_6__["LayoutComponent"], _components_topnav_topnav_component__WEBPACK_IMPORTED_MODULE_4__["TopnavComponent"], _components_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_3__["SidebarComponent"]]
+            declarations: [_layout_component__WEBPACK_IMPORTED_MODULE_5__["LayoutComponent"], _components_topnav_topnav_component__WEBPACK_IMPORTED_MODULE_3__["TopnavComponent"]]
         })
     ], LayoutModule);
     return LayoutModule;

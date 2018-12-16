@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../shared/services/rest.service';
+import { DashboardService } from './dashboard.service';
 
 export interface Currency {
     value: string;
@@ -33,13 +34,16 @@ export class DashboardComponent implements OnInit {
             }
         }
     };
-    constructor(private _rest: RestService) {
+    constructor(private _rest: RestService, private dashboardService: DashboardService) {
     }
 
     ngOnInit() {}
 
     submitForm() {
         console.log(this.userQuery);
+        this.dashboardService.searchQuery(this.userQuery).subscribe(searchResult => {
+            console.log(searchResult);
+        });
     }
 
 }

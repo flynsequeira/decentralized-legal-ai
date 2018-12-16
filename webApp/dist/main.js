@@ -105,7 +105,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"height: 100vh;overflow:hidden;\">\n  <h1 style=\"text-align: center;\">Welcome to Legal AI</h1>\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<div style=\"height: 100vh;overflow:hidden;\">\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -251,8 +251,9 @@ var AuthGuard = /** @class */ (function () {
         if (localStorage.getItem('isLoggedin')) {
             return true;
         }
-        this.router.navigate(['/login']);
-        return false;
+        return true;
+        // this.router.navigate(['/login']);
+        // return false;
     };
     AuthGuard = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),

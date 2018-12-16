@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../shared/services/rest.service';
+import { DashboardService } from './dashboard.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -27,21 +28,16 @@ export class DashboardComponent implements OnInit {
             }
         }
     };
-    constructor(private _rest: RestService) {
+    constructor(private _rest: RestService, private dashboardService: DashboardService) {
     }
 
     ngOnInit() {}
 
     submitForm() {
         console.log(this.userQuery);
-
-        this._rest.sendLegalData(this.userQuery).subscribe( resp => {
-            console.log(resp);
-        },
-        err => {
-            console.log(err);
+        this.dashboardService.searchQuery(this.userQuery).subscribe(searchResult => {
+            console.log(searchResult);
         });
-
     }
 
 }

@@ -1,35 +1,53 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from pymongo import MongoClient
-from elasticsearch import Elasticsearch
 import bcrypt
 import datetime
 import requests
 import json
 import time
+from watson_developer_cloud import NaturalLanguageUnderstandingV1
+from watson_developer_cloud.natural_language_understanding_v1 import Features, CategoriesOptions
+import elasticsearch
+from flask_cors import CORS
+
 
 def connect():
     connection = MongoClient('localhost', 27017)
     handle = connection["flask_reminders"]
     return handle
 
+
+
+
+
 app = Flask(__name__)
-app.config['ELASTICSEARCH_URL'] = 'localhost:9200/'
-es =  Elasticsearch([app.config['ELASTICSEARCH_URL']])
 handle = connect()
 
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-@app.route("/hello")
+@app.route("/")
 def hello():
-    return "Hello World!"
+        return "Hello World!"
 
 
-@app.route('/case', methods=['POST'])
-def data():
-    key1 = request.get_json()
-    print(key1['data'])
+@app.route("/api/search-case", methods=['GET'])
+def search_case():
+        search_string = request.args.get('search_string')
+        es = elasticsearch.Elasticsearch()  # use default of localhost, port 9200
+        # es.search(index='case_law', q='contract breach')
+        result = es.search(index='case_law', q=search_string)
+        searches = json.dumps(result)
+        return searches
 
-    return  "{status:error, data: 'test'}"
 
 
-if __name__ == '__main__':
-    app.run()
+@app.route("/summarize-case", methods=['GET', 'POST'])
+def summarize_case():
+        if request.method == 'POST':
+                natural_language_understanding = NaturalLanguageUnderstandingV1(version='2018-11-16',iam_apikey='fhfAp9h12U5DSbZ0AzPomZ-suKwnboNAg3EdorPHsB5e',url='https://gateway-lon.watsonplatform.net/natural-language-understanding/api')
+                response = natural_language_understanding.analyze(text=request.form.get('case_body'),features=Features(categories=CategoriesOptions(limit=3))).get_result()
+                return response
+
+
+if __name__ == "__main__":
+        app.run()

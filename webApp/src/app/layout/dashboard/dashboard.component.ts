@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { RestService } from '../../shared/services/rest.service';
 import { DashboardService } from './dashboard.service';
+import {MatPaginator, MatTableDataSource} from '@angular/material';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
     selector: 'app-dashboard',
@@ -9,6 +11,11 @@ import { DashboardService } from './dashboard.service';
 })
 export class DashboardComponent implements OnInit {
     userQuery: String;
+    caseList = [];
+    showTable = false;
+    error = false;
+    emptyErr = false;
+
     demoDataset = {
         "sentiment": {
             "document": {
@@ -28,16 +35,43 @@ export class DashboardComponent implements OnInit {
             }
         }
     };
-    constructor(private _rest: RestService, private dashboardService: DashboardService) {
+
+
+    constructor(private _rest: RestService, private dashboardService: DashboardService, private _spinner: NgxSpinnerService) {
     }
 
-    ngOnInit() {}
+    displayedColumns: string[] = ['legal_id', 'case_body'];
+
+
+  ngOnInit() {
+
+  }
+
 
     submitForm() {
-        console.log(this.userQuery);
-        this.dashboardService.searchQuery(this.userQuery).subscribe(searchResult => {
-            console.log(searchResult);
-        });
+        this._spinner.show();
+
+        if (this.userQuery !== undefined) {
+
+            this.dashboardService.searchQuery(this.userQuery).subscribe(searchResult => {
+                this._spinner.hide();
+                this.caseList = searchResult['hits']['hits'];
+                this.showTable = true;
+                if (Object.keys(this.caseList).length === 0) {
+                    console.log('insside');
+                    this.showTable = false;
+                    this.error = true;
+                }
+            }, err => {
+                this._spinner.hide();
+                console.log(err);
+            });
+
+        } else {
+            this._spinner.hide();
+            this.emptyErr = true;
+        }
+
     }
 
 }

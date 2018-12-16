@@ -6,7 +6,8 @@ import {
     MatIconModule,
     MatListModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +16,7 @@ import { RestService } from './shared/services/rest.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
     declarations: [AppComponent],
@@ -24,7 +26,8 @@ import { AppComponent } from './app.component';
         BrowserAnimationsModule,
         LayoutModule,
         OverlayModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxSpinnerModule
     ],
     providers: [RestService],
     bootstrap: [AppComponent]

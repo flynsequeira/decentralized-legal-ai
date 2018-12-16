@@ -20,3 +20,22 @@ table {
 .query-full-width {
     width: 75%;
   }
+
+  td{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .example-card {
+    max-width: 75%;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .mat-card {
+      margin-top: 40px;
+  }

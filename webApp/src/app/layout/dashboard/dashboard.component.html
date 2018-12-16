@@ -1,34 +1,34 @@
 <div class="container">
-<h4> Tell us about your legal problem, and we'll show you relevant results with insights. </h4>
-<mat-form-field class="query-full-width">
-  <input matInput [(ngModel)]="userQuery" #incidentDescription maxlength="60" placeholder='Keep your search precise(max 60 letter). Seperate the words by space.'>
-</mat-form-field>{{60- incidentDescription.value.length}}/60
-<mat-error *ngIf="this.error">No results found for your query.</mat-error>
-<mat-error *ngIf="this.emptyErr">Please enter your query.</mat-error>
-<br>
-<div class="example-button-row">
-  <button mat-raised-button color="primary" (click)="submitForm()">Search</button>
-</div>
-
-
-
-<mat-card class="example-card" *ngFor="let case of caseList; let i = index">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Case {{(i) + (1)  }} </mat-card-title>
-    <mat-card-subtitle>{{case._id}}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p style="text-align: left;">
-      {{case._source.case_body | json}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
+  <h4> Tell us about your legal problem, and we'll show you relevant results with insights. </h4>
+  <mat-form-field class="query-full-width">
+    <input matInput [(ngModel)]="userQuery" #incidentDescription maxlength="60" placeholder='Keep your search precise(max 60 letter). Seperate the words by space.'>
+  </mat-form-field>{{60- incidentDescription.value.length}}/60
+  <mat-error *ngIf="this.error">No results found for your query.</mat-error>
+  <mat-error *ngIf="this.emptyErr">Please enter your query.</mat-error>
   <br>
-</mat-card>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="submitForm()">Search</button>
+  </div>
+
+
+
+  <mat-card class="example-card" *ngFor="let case of caseList; let i = index">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Case {{(i) + (1) }} </mat-card-title>
+      <mat-card-subtitle>{{case._id}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p style="text-align: left;">
+        {{case._source.case_body | json}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+    <br>
+  </mat-card>
 
 
 

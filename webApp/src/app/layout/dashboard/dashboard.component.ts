@@ -58,7 +58,6 @@ export class DashboardComponent implements OnInit {
                 this.caseList = searchResult['hits']['hits'];
                 this.showTable = true;
                 if (Object.keys(this.caseList).length === 0) {
-                    console.log('insside');
                     this.showTable = false;
                     this.error = true;
                 }

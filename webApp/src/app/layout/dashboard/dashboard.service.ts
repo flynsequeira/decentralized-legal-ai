@@ -25,7 +25,6 @@ export class DashboardService {
     return this.http.get(search_url, opts).pipe(
         map(res => {
             let searchResult = res;
-            console.log(searchResult)
             return searchResult;
         }),
         catchError(this.handleErrors)
@@ -37,7 +36,6 @@ export class DashboardService {
     return headers;
   }
   handleErrors(error: Response) {
-    console.log(error);
     return throwError(error);
   }
 
